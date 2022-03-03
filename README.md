@@ -16,4 +16,39 @@ wg
 Конфиг общий:
 /etc/wireguard/wg0.conf
 
-# 
+# ikev2-deploy-certs.sh
+Скрипт настройки ipsec туннеля
+Рабочий вариант конфига  для соединения с фортигейтом:
+/etc/ipsec.conf
+  GNU nano 4.8                                                                                                                                     
+config setup
+    charondebug="ike 1, knl 1, cfg 0, ike 2"
+    uniqueids=no
+
+conn ikev2-vpn
+    auto=add
+    compress=no
+    type=tunnel
+    keyexchange=ikev2
+    fragmentation=yes
+    forceencaps=yes
+    ike=aes256-sha256-modp2048!
+    esp=aes256-sha256-modp2048!
+    dpdaction=clear
+    dpddelay=300s
+    rekey=no
+    left=public ip of swan server
+    leftid=%any
+    leftsubnet=0.0.0.0/0
+    right=public ip of fortigate
+    rightid=%any
+    authby=secret
+
+
+
+
+
+
+
+
+
