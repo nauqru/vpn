@@ -17,7 +17,8 @@ wg
 /etc/wireguard/wg0.conf
 
 # ikev2-deploy-certs.sh
-Скрипт настройки ipsec туннеля
+# ikev2-deploy-certs.sh
+Скрипты настройки ipsec туннеля с использованием сертификата и по PSK ключу
 Рабочий вариант конфига  для соединения с фортигейтом:
 /etc/ipsec.conf
   GNU nano 4.8                                                                                                                                     
